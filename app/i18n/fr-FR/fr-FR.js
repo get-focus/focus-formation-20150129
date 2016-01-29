@@ -64,6 +64,7 @@ export default {
             trailer: 'Bande annonce',
             writers: 'Scénaristes'
         },
+        title: 'Titre',
         unknown: 'Aucune fiche'
     },
     movies: 'Films',
