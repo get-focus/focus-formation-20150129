@@ -1,6 +1,8 @@
 import React from 'react';
 import application from 'focus-core/application';
 import router from 'focus-core/router';
+import MovieDetail from '../views/movie';
+
 
 function MonComposant(props){
   return <div>Test</div>;
@@ -14,14 +16,11 @@ const MonComposant2 = React.createClass({
 });
 
 export default router.extend({
-    log: true,
-    beforeRoute() {
-        application.changeRoute('demo');
-    },
     routes: {
         '': 'demoRouteHandler',
         'demo': 'demoRouteHandler',
-        'demo/:id': 'detailDemoHandler'
+        'demo/:id': 'detailDemoHandler',
+        'movies/:id': 'movieDetailHandler'
     },
     demoRouteHandler() {
         console.log('ROUTER: DEMO');
@@ -31,5 +30,8 @@ export default router.extend({
     detailDemoHandler(id){
         this._pageContent(MonComposant2, {props: {id: id, name: 'Pierre'}});
         // <MonComposant2  id={id}/>
+    },
+    movieDetailHandler(id){
+      this._pageContent(MovieDetail, {props: {id: id}});
     }
 });
