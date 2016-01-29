@@ -5,17 +5,30 @@ import {cartridgeBehaviour} from 'focus-components/page/mixin';
 import {component as BackButton} from 'focus-components/common/button/back';
 import HeaderExpanded from './header-expanded';
 import HeaderSummary from './header-summary';
+import history from 'focus-core/history';
 
 export default React.createClass({
     mixins: [cartridgeBehaviour],
     cartridgeConfiguration() {
         return {
-            barLeft: { component: BackButton },
+            barLeft: { component: BackButton},
             cartridge: { component: HeaderExpanded},
             summary: { component: HeaderSummary},
             actions: {
-                primary: [],
-                secondary: []
+                primary: [{
+                    action() {
+                        history.navigate('home', true);
+                    },
+                    icon: 'home',
+                    label: 'Go back home'
+                }],
+                secondary: [{
+                    action() {
+                        history.navigate('home', true);
+                    },
+                    icon: 'home',
+                    label: 'Go back home'
+                }]
             }
         };
     },

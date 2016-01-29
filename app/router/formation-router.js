@@ -18,7 +18,7 @@ const MonComposant2 = React.createClass({
 export default router.extend({
     routes: {
         '': 'demoRouteHandler',
-        'demo': 'demoRouteHandler',
+        'home': 'demoRouteHandler',
         'demo/:id': 'detailDemoHandler',
         'movies/:id': 'movieDetailHandler'
     },
