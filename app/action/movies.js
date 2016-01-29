@@ -1,25 +1,15 @@
 import {loadMovie, saveMovie} from '../services/movies';
 import dispatcher from 'focus-core/dispatcher';
+import actionBuilder from 'focus-core/application/action-builder';
 
-export function loadMovieAction(criteria) {
-    return loadMovie(criteria).then(movie => {
-        dispatcher.handleServerAction({
-            data: {
-                movieInfo: movie
-            },
-            type: 'update'
-        });
-    });
-}
+export const loadMovieAction = actionBuilder({
+    node: 'movieInfo',
+    service: loadMovie,
+    status: 'loaded'
+});
 
-export function saveMovieAction(movie) {
-    return saveMovie(movie).then(movie => {
-        dispatcher.handleServerAction({
-            data: {
-                movieInfo: movie
-            },
-            status: 'saved',
-            type: 'update'
-        });
-    });
-}
+export const saveMovieAction = actionBuilder({
+    node: 'movieInfo',
+    service: saveMovie,
+    status: 'saved'
+});
