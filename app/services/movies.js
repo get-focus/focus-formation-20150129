@@ -8,5 +8,5 @@ export function loadMovie(id) {
 
 export function saveMovie(movie) {
     console.log(`[MOVIE] call saveMovie(${movie.id}) method`);
-    return fetch(saveMovieURL({urlData: {id: movie.id}, data: {movie}}), {isCORS: true});
+    return fetch(saveMovieURL({urlData: {id: movie.id}, data: movie}), {isCORS: true});
 }

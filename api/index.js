@@ -139,7 +139,7 @@ app.get('/movies/:id/people', (req, res) => {
 
 // PUT MOVIE
 app.put('/movies/:id', (req, res) => {
-    const data = req.body.data;
+    const data = req.body;
     const id = +data.id;
     if(id) {
         const movie = _getMovieById(id);

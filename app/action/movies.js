@@ -18,6 +18,7 @@ export function saveMovieAction(movie) {
             data: {
                 movieInfo: movie
             },
+            status: 'saved',
             type: 'update'
         });
     });

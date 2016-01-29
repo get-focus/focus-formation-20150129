@@ -26,7 +26,7 @@ export default React.createClass({
             width: '100px'
         };
         return (
-            <Panel title='Informations'>
+            <Panel title='Informations' actions={this._renderActions}>
                 {this.fieldFor('title')}
                 {this.fieldFor('movieType')}
                 {this.fieldFor('productionYear')}
