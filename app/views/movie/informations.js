@@ -8,7 +8,8 @@ export default React.createClass({
     definitionPath: 'movie',
     getInitialState() {
         return {
-            actors: []
+            actors: [],
+            title: 'Chargement du titre...'
         }
     },
     action: {
