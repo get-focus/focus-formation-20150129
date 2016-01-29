@@ -6,6 +6,11 @@ import movieStore from '../../stores/movies';
 export default React.createClass({
     mixins: [formPreset],
     definitionPath: 'movie',
+    getInitialState() {
+        return {
+            actors: []
+        }
+    },
     action: {
         load: loadMovieAction
     },
@@ -15,10 +20,17 @@ export default React.createClass({
     }],
     renderContent() {
         const {id} = this.props;
-        const {title} = this.state;
+        const {title, poster, actors} = this.state;
+        const posterStyle = {
+            width: '100px'
+        };
         return (
             <Panel title='Informations'>
                 <h3>{title}</h3>
+                <img src={poster} style={posterStyle}/>
+                {actors.map(actor => (
+                    <div>{actor.name} dans le rôle de {actor.role}</div>
+                ))}
             </Panel>
         );
     }
