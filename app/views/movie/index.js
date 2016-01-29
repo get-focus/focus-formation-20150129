@@ -1,14 +1,14 @@
 import React, {PropTypes} from 'react';
+import ScrollspyContainer from 'focus-components/components/scrollspy-container';
 import InformationMovie from './informations';
 
 export default React.createClass({
   render(){
     const {id} = this.props;
     return (
-      <div>
-        <h1>Mon film {id}</h1>
+      <ScrollspyContainer>
         <InformationMovie id={id}/>
-      </div>
+      </ScrollspyContainer>
     )
   }
 })
