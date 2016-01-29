@@ -21,7 +21,7 @@ export default React.createClass({
         properties: ['movieInfo']
     }],
     renderContent() {
-        const {id} = this.props;
+        const {id, openPopin} = this.props;
         const {poster, actors} = this.state;
         const posterStyle = {
             width: '100px'
@@ -32,6 +32,7 @@ export default React.createClass({
                 {this.fieldFor('movieType')}
                 {this.fieldFor('productionYear')}
                 {this.fieldFor('shortSynopsis')}
+                <button type='button' onClick={openPopin}>TogglePopin</button>
             </Panel>
         );
     }
